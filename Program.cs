@@ -115,7 +115,7 @@ namespace GUID_GEN
                 if (!Blacklisted.Contains(candidate) && !Generated.Contains(candidate))
                 {
                     Generated.Add(candidate);
-                    File.AppendAllText(GuidStorePath, $"{candidate} Timestamp: {DateTime.Now:yyyy-MM-dd HH:mm:ss} {Environment.NewLine}");
+                    File.AppendAllText(GuidStorePath, $"[GUID]: {candidate} | [Timestamp]: {DateTime.Now:yyyy-MM-dd HH:mm:ss} {Environment.NewLine}");
                     Blacklisted.Add(candidate);
                     File.AppendAllText(BlacklistPath, $"\"{candidate}\"{Environment.NewLine}");
                     return candidate;
